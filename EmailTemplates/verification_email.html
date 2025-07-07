@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Email - Rent2Go</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .verification-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid #e0e0e0;
+        }
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .verification-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .verification-button:hover {
+            background-color: #45a049;
+        }
+        .verification-link {
+            word-break: break-all;
+            color: #3498db;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #7f8c8d;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+        }
+        .help-text {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://via.placeholder.com/150x50.png?text=Rent2Go" alt="Rent2Go Logo" class="logo">
+        <h1>Verificación de Email</h1>
+    </div>
+
+    <div class="verification-container">
+        <p>¡Hola <strong>{{NAME}}</strong>!</p>
+        
+        <p>Gracias por registrarte en Rent2Go, la plataforma líder de alquiler de vehículos. Para completar tu registro y acceder a todas las funcionalidades, necesitamos verificar tu dirección de correo electrónico.</p>
+        
+        <div class="button-container">
+            <a href="{{VERIFICATION_LINK}}" class="verification-button">Verificar mi email</a>
+        </div>
+        
+        <p class="help-text">Si el botón no funciona, copia y pega el siguiente enlace en tu navegador:</p>
+        <p class="verification-link">{{VERIFICATION_LINK}}</p>
+        
+        <p><strong>Nota:</strong> Este enlace expirará en 3 días por razones de seguridad.</p>
+    </div>
+    
+    <p>Una vez verificado tu email, podrás:</p>
+    <ul>
+        <li>Explorar nuestra amplia selección de vehículos</li>
+        <li>Realizar reservas y gestionar tus alquileres</li>
+        <li>Acceder a ofertas exclusivas para miembros</li>
+    </ul>
+    
+    <p>Si no has solicitado esta verificación, puedes ignorar este correo electrónico.</p>
+    
+    <div class="footer">
+        <p>© 2025 Rent2Go. Todos los derechos reservados.</p>
+        <p>Si tienes alguna pregunta, contáctanos en <a href="mailto:soporte@rent2go.com">soporte@rent2go.com</a></p>
+    </div>
+</body>
+</html>

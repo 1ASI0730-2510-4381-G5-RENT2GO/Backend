@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código de Verificación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0;
+            background-color: #1f2937;
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border: 1px solid #374151;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .logo {
+            max-width: 120px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            color: white;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            position: relative;
+            z-index: 1;
+        }
+        .content {
+            padding: 50px 40px;
+            text-align: center;
+        }
+        .greeting {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 16px;
+            color: #d1d5db;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        .code-container {
+            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 2px solid #4b5563;
+            position: relative;
+        }
+        .code-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 49%, rgba(59, 130, 246, 0.1) 50%, transparent 51%);
+            border-radius: 14px;
+        }
+        .code {
+            font-family: 'Poppins', monospace;
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: 8px;
+            color: #60a5fa;
+            margin: 0;
+            padding: 0;
+            text-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        .code-label {
+            font-size: 14px;
+            color: #9ca3af;
+            font-weight: 500;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .note {
+            font-size: 14px;
+            color: #9ca3af;
+            margin-top: 30px;
+            font-weight: 400;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white !important;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            margin: 35px 0 25px;
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4), 0 4px 6px -2px rgba(59, 130, 246, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            letter-spacing: -0.025em;
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.5), 0 10px 10px -5px rgba(59, 130, 246, 0.2);
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #111827;
+            border-top: 1px solid #374151;
+        }
+        .social {
+            margin-bottom: 25px;
+        }
+        .social a {
+            display: inline-block;
+            margin: 0 12px;
+            padding: 8px;
+            border-radius: 50%;
+            background-color: #1f2937;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
+        }
+        .social a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+            background-color: #2d3748;
+        }
+        .social img {
+            width: 24px;
+            height: 24px;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+            filter: brightness(1.2);
+        }
+        .social img:hover {
+            opacity: 1;
+        }
+        .copyright {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        .help {
+            font-size: 14px;
+            color: #9ca3af;
+            margin-top: 20px;
+            font-weight: 400;
+        }
+        .help a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .help a:hover {
+            text-decoration: underline;
+        }
+        .security-note {
+            background-color: #422006;
+            border: 1px solid #92400e;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #fcd34d;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .security-note .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #f59e0b;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+            position: relative;
+        }
+        .security-note .icon::before {
+            content: '!';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                margin: 10px;
+                border-radius: 16px;
+            }
+            .content {
+                padding: 40px 25px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .code {
+                font-size: 40px;
+                letter-spacing: 6px;
+            }
+            .code-container {
+                padding: 25px 20px;
+                margin: 30px 0;
+            }
+            .button {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .greeting {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.im.ge/2025/06/02/vGl3Y8.Rent2Go.png" alt="Rent2Go Logo" class="logo">
+            <h1>¡Bienvenido a Rent2Go!</h1>
+        </div>
+        <div class="content">
+            <p class="greeting">¡Hola, {{NAME}}!</p>
+            <p class="message">Gracias por registrarte en Rent2Go, tu plataforma de alquiler de vehículos. Para garantizar la seguridad de tu cuenta, necesitamos verificar tu dirección de correo electrónico.</p>
+            
+            <p class="message">Ingresa el siguiente código en la página de verificación:</p>
+            
+            <div class="code-container">
+                <div class="code-label">Código de Verificación</div>
+                <div class="code">{{VERIFICATION_CODE}}</div>
+            </div>
+            
+            <div class="security-note">
+                <span class="icon"></span>
+                Este código expirará en 60 minutos por tu seguridad.
+            </div>
+            
+            <a href="http://localhost:5173/verify-code?email={{EMAIL_ENCODED}}" class="button">Verificar mi cuenta</a>
+            
+            <p class="help">¿Tienes problemas? Contacta a nuestro <a href="mailto:soporte@rent2go.com">equipo de soporte</a>.</p>
+        </div>
+        <div class="footer">
+            <div class="social">
+                <a href="https://facebook.com/rent2go" style="display: inline-block; margin: 0 12px; text-decoration: none;">
+                    <div style="width: 40px; height: 40px; background-color: #1f2937; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-facebook-f" style="color: #3b82f6; font-size: 20px;"></i>
+                    </div>
+                </a>
+                <a href="https://twitter.com/rent2go" style="display: inline-block; margin: 0 12px; text-decoration: none;">
+                    <div style="width: 40px; height: 40px; background-color: #1f2937; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-twitter" style="color: #3b82f6; font-size: 20px;"></i>
+                    </div>
+                </a>
+                <a href="https://instagram.com/rent2go" style="display: inline-block; margin: 0 12px; text-decoration: none;">
+                    <div style="width: 40px; height: 40px; background-color: #1f2937; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-instagram" style="color: #3b82f6; font-size: 20px;"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="copyright">© 2025 Rent2Go. Todos los derechos reservados.</div>
+            <p class="help">Si no solicitaste este correo, por favor ignóralo.</p>
+        </div>
+    </div>
+</body>
+</html>
+

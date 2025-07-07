@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+        <PackageReference Include="DotNetEnv" Version="3.1.1" />
+        <PackageReference Include="EFCore.NamingConventions" Version="8.0.3" />
+        <PackageReference Include="MailKit" Version="4.12.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="8.0.10" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.10" />
+
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.10" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.8" />
+    
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.12.0" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
+        <PackageReference Include="SendGrid" Version="9.29.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.12.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Client\Application\ACL\" />
+      <Folder Include="Client\Interfaces\ACL\" />
+      <Folder Include="Provider\Application\Internal\" />
+      <Folder Include="Provider\Domain\Model\" />
+      <Folder Include="Provider\Domain\Repositories\" />
+      <Folder Include="Provider\Domain\Services\" />
+      <Folder Include="Provider\Infrastructure\Persistence\EFC\Repositories\" />
+      <Folder Include="Provider\Interfaces\ACL\" />
+      <Folder Include="Provider\Interfaces\REST\" />
+      <Folder Include="Shared\Domain\Repositories\" />
+      <Folder Include="Shared\Infrastructure\" />
+    </ItemGroup>
+
+</Project>

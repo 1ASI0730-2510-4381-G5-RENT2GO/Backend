@@ -1,0 +1,6 @@
+@BackendRent2Go_HostAddress = http://localhost:5239
+
+GET {{BackendRent2Go_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
