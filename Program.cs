@@ -330,6 +330,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 
+// Habilitar Swagger tanto en desarrollo como en producción para facilitar las pruebas
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
