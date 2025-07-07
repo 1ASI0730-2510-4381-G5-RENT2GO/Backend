@@ -1,0 +1,12 @@
+﻿bin/
+obj/
+.git/
+.gitignore
+.vs/
+.vscode/
+*.md
+.env
+appsettings.Local.json
+Dockerfile
+.dockerignore
+
