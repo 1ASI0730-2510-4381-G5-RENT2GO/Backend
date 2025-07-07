@@ -271,9 +271,13 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", policy =>
     {
-        policy.AllowAnyHeader()
+        var frontendUrl = Environment.GetEnvironmentVariable("FRONTEND_URL") ?? "https://rent2go-g5.netlify.app";
+        var localFrontendUrl = Environment.GetEnvironmentVariable("LOCAL_FRONTEND_URL") ?? "http://localhost:5173";
+        
+        policy.WithOrigins(frontendUrl, localFrontendUrl, "http://localhost:3000")
+              .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowAnyOrigin();
+              .AllowCredentials();
     });
 });
 
