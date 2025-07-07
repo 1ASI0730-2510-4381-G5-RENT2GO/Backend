@@ -35,12 +35,8 @@
       <Folder Include="Client\Application\ACL\" />
       <Folder Include="Client\Interfaces\ACL\" />
       <Folder Include="Provider\Application\Internal\" />
-      <Folder Include="Provider\Domain\Model\" />
-      <Folder Include="Provider\Domain\Repositories\" />
-      <Folder Include="Provider\Domain\Services\" />
       <Folder Include="Provider\Infrastructure\Persistence\EFC\Repositories\" />
       <Folder Include="Provider\Interfaces\ACL\" />
-      <Folder Include="Provider\Interfaces\REST\" />
       <Folder Include="Shared\Domain\Repositories\" />
       <Folder Include="Shared\Infrastructure\" />
     </ItemGroup>

@@ -88,6 +88,9 @@ builder.Services.AddScoped<BackendRent2Go.Client.Interfaces.ACL.IProviderVehicle
 // Registrar servicios del módulo Client (Reservas para clientes)
 builder.Services.AddScoped<BackendRent2Go.Client.Domain.Services.IReservationService, BackendRent2Go.Client.Application.Internal.CommandServices.ReservationService>();
 
+// Registrar servicios del módulo Provider (Reservas para providers)
+builder.Services.AddScoped<BackendRent2Go.Provider.Domain.Services.IProviderReservationService, BackendRent2Go.Provider.Application.Internal.CommandServices.ProviderReservationService>();
+
 // Registrar repositorios de pagos
 builder.Services.AddScoped<BackendRent2Go.Client.Domain.Repositories.IPaymentMethodRepository, BackendRent2Go.Client.Infrastructure.Persistence.EFC.Repositories.PaymentMethodRepository>();
 builder.Services.AddScoped<BackendRent2Go.Client.Domain.Repositories.IPaymentRepository, BackendRent2Go.Client.Infrastructure.Persistence.EFC.Repositories.PaymentRepository>();
